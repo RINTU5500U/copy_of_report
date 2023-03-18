@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const msgSchema = new mongoose.Schema({
+const reportSchema = new mongoose.Schema({
     subject: {
         type: String,
         trim: true
@@ -29,4 +29,4 @@ const msgSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Msg', msgSchema) 
+module.exports = mongoose.model('Report', reportSchema) 
