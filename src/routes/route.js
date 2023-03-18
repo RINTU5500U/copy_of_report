@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const msgModel = require('../models/msgModel')
+const msgModel = require('../models/reportModel')
 const AWS = require("aws-sdk");
 AWS.config.update({
     accessKeyId: "AKIAY3L35MCRZNIRGT6N",
@@ -10,7 +10,7 @@ AWS.config.update({
 const s3 = new AWS.S3({ appVersion: "2006-03-01" });
 
 
-router.post('/sendMessage', async (req, res) => {
+router.post('/report', async (req, res) => {
     try {
         const file = req.files[0]
         const {subject, helpMsg, contact, request} = req.body
